@@ -1,217 +1,93 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>黄莹琳 | 作品集</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>黄莹�?| 作品�?/title>
   <style>
-    :root {
-      --bg: #f6f4ef;
-      --bg-accent: #efe8da;
-      --text: #1f1c18;
-      --muted: #6f665c;
-      --line: #d8cdbf;
-      --card: #fffdfa;
-      --highlight: #cf5e2d;
-    }
-
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 80% 10%, rgba(207, 94, 45, 0.13), transparent 36%),
-        radial-gradient(circle at 10% 85%, rgba(110, 123, 98, 0.16), transparent 34%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-accent) 100%);
-      font-family: "Georgia", "Times New Roman", serif;
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #1a1a1a;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid currentColor;
-    }
-
-    .wrap {
-      width: min(1120px, 92vw);
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(8px);
-      background: rgba(246, 244, 239, 0.78);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .site-header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-
-    .site-title {
-      margin: 0;
-      font-size: clamp(1.25rem, 2.2vw, 1.8rem);
-      letter-spacing: 0.03em;
-    }
-
-    .site-contact {
-      font-size: 0.96rem;
-      color: var(--muted);
-    }
-
-    .hero {
-      padding: 3.2rem 0 2rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero h2 {
-      margin: 0;
-      font-size: clamp(2rem, 4.6vw, 4rem);
-      line-height: 1.1;
-      max-width: 12ch;
-      font-weight: 500;
-    }
-
-    .hero p {
-      margin: 1.2rem 0 0;
-      font-size: 1.06rem;
-      color: var(--muted);
-      max-width: 65ch;
-      line-height: 1.7;
-    }
-
-    .projects {
+    .gallery {
+      width: 100%;
+      min-height: 100vh;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      padding: 2.5rem 0 4rem;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+      gap: 0;
+      padding: 0;
     }
 
-    .project {
-      border: 1px solid var(--line);
-      background: var(--card);
-      padding: 1.1rem;
-      min-height: 240px;
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-      transition: transform 220ms ease, box-shadow 220ms ease;
+    .gallery-item {
+      position: relative;
+      width: 100%;
+      aspect-ratio: auto;
+      overflow: hidden;
     }
 
-    .project:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 24px rgba(31, 28, 24, 0.08);
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .project-index {
-      margin: 0;
-      color: var(--highlight);
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .project h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .project p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.98rem;
-    }
-
-    .site-footer {
-      border-top: 1px solid var(--line);
-      padding: 1rem 0 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .back-to-top {
-      border: 1px solid var(--line);
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      background: #fff;
-    }
-
-    @media (max-width: 900px) {
-      .projects {
+    /* 手机端：单页显示 */
+    @media (max-width: 1024px) {
+      .gallery {
         grid-template-columns: 1fr;
       }
+    }
 
-      .hero {
-        padding-top: 2.2rem;
-      }
-
-      .site-header-inner,
-      .site-footer {
-        flex-direction: column;
-        align-items: flex-start;
+    /* 平板和更小设�?*/
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap site-header-inner">
-      <h1 class="site-title">黄莹琳 作品集</h1>
-      <div class="site-contact">Email: <a href="mailto:balletrcy@163.com">balletrcy@163.com</a></div>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="hero" id="top">
-      <h2>低碳语境下的沉浸式空间研究</h2>
-      <p>
-        围绕材料驱动的空间产品原型，探索沉浸式冥想与生态疗愈的新型场景。
-        页面已重构为纯静态 HTML 与 CSS，不再依赖任何第三方运行时脚本与复杂 overlay 层级系统。
-      </p>
-    </section>
-
-    <section class="projects" aria-label="项目章节">
-      <article class="project">
-        <p class="project-index">01 · Problem · 2025</p>
-        <h3>问题挖掘</h3>
-        <p>聚焦空间体验中的情绪触发机制、使用行为路径和环境效率痛点，明确可落地的研究边界与目标场景。</p>
-      </article>
-
-      <article class="project">
-        <p class="project-index">02 · Strategy</p>
-        <h3>设计策略</h3>
-        <p>以低碳材料与动态环境反馈为主线，建立“感知 - 交互 - 疗愈”的空间策略框架，强化可持续表达。</p>
-      </article>
-
-      <article class="project">
-        <p class="project-index">03 · Process</p>
-        <h3>设计过程</h3>
-        <p>从概念验证到原型迭代，结合体验测试与视觉叙事，完成空间系统化设计与展示路径构建。</p>
-      </article>
-    </section>
-  </main>
-
-  <footer class="wrap site-footer">
-    <span>© 黄莹琳 Portfolio</span>
-    <a class="back-to-top" href="#top">Top</a>
-  </footer>
+  <div class="gallery">
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_01.jpg" alt="page 1"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_02.jpg" alt="page 2"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_03.jpg" alt="page 3"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_04.jpg" alt="page 4"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_05.jpg" alt="page 5"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_06.jpg" alt="page 6"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_07.jpg" alt="page 7"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_08.jpg" alt="page 8"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_09.jpg" alt="page 9"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_10.jpg" alt="page 10"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_11.jpg" alt="page 11"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_12.jpg" alt="page 12"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_13.jpg" alt="page 13"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_14.jpg" alt="page 14"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_15.jpg" alt="page 15"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_16.jpg" alt="page 16"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_17.jpg" alt="page 17"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_18.jpg" alt="page 18"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_19.jpg" alt="page 19"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_20.jpg" alt="page 20"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_21.jpg" alt="page 21"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_22.jpg" alt="page 22"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_23.jpg" alt="page 23"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_24.jpg" alt="page 24"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_25.jpg" alt="page 25"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_26.jpg" alt="page 26"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_27.jpg" alt="page 27"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_28.jpg" alt="page 28"></div>
+    <div class="gallery-item"><img src="pic/00_final booklet_页面_29.jpg" alt="page 29"></div>
 </body>
 </html>
